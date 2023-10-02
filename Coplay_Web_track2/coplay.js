@@ -37,13 +37,13 @@ let {
 //Setup model for prediction
 
 const sess = new onnx.InferenceSession();
-const loadingModelPromise = sess.loadModel("./10_1_0.onnx");
+const loadingModelPromise = sess.loadModel("./tri_8_rework_50.onnx");
 
 const hands = new Hands({locateFile: (file) => {
     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
 }});
 hands.setOptions({
-    maxNumHands: 1,
+    maxNumHands: 2,
     modelComplexity: 1,
     minDetectionConfidence: 0.5,
     minTrackingConfidence: 0.5
@@ -86,12 +86,9 @@ function initializeVariables() {
         2: "S",
         3: "FCC",
         4: "FCW",
-        5: "STOP",
-        6: "N",
-        7: "FCC",
-        8: "FCW",
-        9: "CCW",
-        10: "CW"
+        5: "CCW",
+        6: "CW",
+        7: "LED"
     };
     let lastDirection;
     return {
