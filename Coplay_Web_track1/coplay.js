@@ -308,7 +308,7 @@ async function openWebSocket() {
   
     websocket = new WebSocket(serverURL);
     websocket.binaryType = "arraybuffer";
-    camera.start(); //comment this when having the robot
+    // camera.start(); //comment this when having the robot
     websocket.onopen = async () => {
         if (device) {
             await loadingModelPromise.then(() => { //await model
