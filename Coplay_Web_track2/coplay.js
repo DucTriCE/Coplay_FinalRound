@@ -37,7 +37,7 @@ let {
 //Setup model for prediction
 
 const sess = new onnx.InferenceSession();
-const loadingModelPromise = sess.loadModel("./tri_8_rework_50.onnx");
+const loadingModelPromise = sess.loadModel("./track2.onnx");
 
 const hands = new Hands({locateFile: (file) => {
     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
@@ -88,7 +88,6 @@ function initializeVariables() {
         4: "FCW",
         5: "CCW",
         6: "CW",
-        7: "LED"
     };
     let lastDirection;
     return {
@@ -311,7 +310,7 @@ async function openWebSocket() {
   
     websocket = new WebSocket(serverURL);
     websocket.binaryType = "arraybuffer";
-    camera.start(); //detect
+    // camera.start(); //comment this when testing the robot
     websocket.onopen = async () => {
         if (device) {
             await loadingModelPromise.then(() => { //await model
