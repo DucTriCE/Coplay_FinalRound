@@ -84,8 +84,8 @@ function initializeVariables() {
         0: "STOP",
         1: "N",
         2: "S",
-        3: "FCC",
-        4: "FCW",
+        3: "FCW",
+        4: "FCC",
         5: "CCW",
         6: "CW",
     };
