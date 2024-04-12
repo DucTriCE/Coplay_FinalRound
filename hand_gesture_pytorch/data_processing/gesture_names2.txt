@@ -1,0 +1,9 @@
+0: Stop
+1: Forward
+2: Backward
+3: Leftward
+4: Rightward
+5: Rotate left
+6: Rotate right
+7: None
+8: No hand detected
